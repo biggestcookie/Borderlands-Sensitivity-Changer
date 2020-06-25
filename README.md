@@ -6,7 +6,7 @@ Borderlands 2 and Borderlands: The Pre-Sequel allow you to change mouse sensitiv
 
 ### Releases
 
-The built application can be found in the [releases](https://github.com/biggestcookie/borderlands-sens-changer/releases) of this repository. Simply download the application to any location and run it.
+The built application can be found in the [releases](https://github.com/biggestcookie/borderlands-sensitivity-changer/releases) of this repository. Simply download the application to any location and run it. Make sure you have run the game and have changed some settings at least once before launching.
 
 Currently there is only Windows support.
 
@@ -48,5 +48,6 @@ You can build the application into an executable with the command `pyinstaller m
 
 This script is an improved version of a solution found on the [Borderlands 2 Steam Community](https://steamcommunity.com/app/49520/discussions/0/882960797527726404/) by user [Kaathan](https://steamcommunity.com/id/Kaathan).
 
---- 
+---
+
 [![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/W7W71USFG)

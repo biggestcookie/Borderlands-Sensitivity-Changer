@@ -59,8 +59,9 @@ def get_profile_path() -> str:
     if not os.path.isfile(profile_path):
         print(f"\nCould not find '{game_choice}\\WillowGame\\SaveData'.")
         print(
-            f"Please enter the path to WillowGame, ex: C:\\Users\\CL4P-TP\\Documents\\My Games\\{game_choice}\\WillowGame"
+            f"Please enter the full path to WillowGame, this can usually be found in 'Documents\\My Games\\{game_choice}'."
         )
+        print(f"Ex. C:\\Users\\CL4P-TP\\Documents\\My Games\\{game_choice}\\WillowGame")
         profile_path = try_input(
             input_to_game_path, error=f"Couldn't find WillowGame at that path."
         )
