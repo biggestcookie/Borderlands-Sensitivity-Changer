@@ -46,7 +46,7 @@ You can build the application into an executable with the command `pyinstaller m
 
 ## Credits
 
-This script is an improved version of a solution found on the [Borderlands 2 Steam Community](https://steamcommunity.com/app/49520/discussions/0/882960797527726404/) by user [Kaathan](https://steamcommunity.com/id/Kaathan).
+This script is an improvement of a solution found on the [Borderlands 2 Steam Community](https://steamcommunity.com/app/49520/discussions/0/882960797527726404/) by user [Kaathan](https://steamcommunity.com/id/Kaathan).
 
 ---
 
