@@ -48,5 +48,5 @@ You can build the application into an executable with the command `pyinstaller m
 
 This script is an improved version of a solution found on the [Borderlands 2 Steam Community](https://steamcommunity.com/app/49520/discussions/0/882960797527726404/) by user [Kaathan](https://steamcommunity.com/id/Kaathan).
 
-===
+--- 
 [![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/W7W71USFG)
