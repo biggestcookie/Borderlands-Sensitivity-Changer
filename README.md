@@ -1,6 +1,6 @@
 # Borderlands Sensitivity Changer
 
-Borderlands 2 and Borderlands: The Pre-Sequel allow you to change mouse sensitivity only in increments of 10. Unfortunately you cannot fine-tune this value yourself or set this value below 10, which [can be frustrating](https://www.google.com/search?q=borderlands+2+sensitivity+too+high). This application helps you easily change this value yourself by walking you through a simple automated process, where it calculates the hex offset of your mouse sensitivity in your save file and edits it for you.
+Borderlands 2 and Borderlands: The Pre-Sequel allow you to change mouse sensitivity only in increments of 10. Unfortunately you cannot fine-tune this value yourself or set this value below 10, which [can be frustrating](https://www.google.com/search?q=borderlands+2+sensitivity+too+high). This program helps you easily change this value yourself by walking you through a simple automated process, where it calculates the hex offset of your mouse sensitivity in your save file and edits it for you.
 
 ## Usage
 
@@ -42,11 +42,11 @@ Install required packages using `pip install -r requirements.txt`
 
 ### Building
 
-You can build the application into an executable with the command `pyinstaller main.py --onefile`
+You can build the program into an executable with the command `pyinstaller main.py --onefile`
 
 ## Credits
 
-This script is an improvement of a solution found on the [Borderlands 2 Steam Community](https://steamcommunity.com/app/49520/discussions/0/882960797527726404/) by user [Kaathan](https://steamcommunity.com/id/Kaathan).
+This program is an improvement of a solution found on the [Borderlands 2 Steam Community](https://steamcommunity.com/app/49520/discussions/0/882960797527726404/) by user [Kaathan](https://steamcommunity.com/id/Kaathan).
 
 ---
 
