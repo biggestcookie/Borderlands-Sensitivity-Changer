@@ -59,7 +59,7 @@ def main():
 
     config[GAME_CHOICE]["path"] = os.path.split(os.path.dirname(PROFILE_PATH))[0]
 
-    print(f"\nBacking up profile.bin to profile.bin.bak", end="\n" * 2)
+    print("\nBacking up profile.bin to profile.bin.bak", end="\n" * 2)
     shutil.copyfile(PROFILE_PATH, f"{PROFILE_PATH}.bak")
 
     if config and "offset" in config[GAME_CHOICE]:
