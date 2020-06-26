@@ -4,7 +4,7 @@ import random
 from util import try_input
 
 
-def get_sens_offset(profile_path: str) -> int:
+def get_current_offset(profile_path: str) -> int:
     while True:
         sens_1 = random.randrange(5, 100, 5)
         print(
@@ -34,9 +34,17 @@ def get_sens_offset(profile_path: str) -> int:
         print("\nUnable to calculate offset! Restarting.")
 
 
-def rewrite_sens(profile_path: str):
-    offset = get_sens_offset(profile_path)
-    sens = try_input(int, "\nEnter your new desired sensitivity (1-255): ")
+def get_current_sens(profile_path: str, offset=None) -> int:
+    if not offset:
+        offset = get_current_offset(profile_path)
+    with open(profile_path, "rb") as f:
+        profile = bytearray(f.read()[20:])
+        return profile[offset]
+
+
+def rewrite_sens(profile_path: str, offset=None) -> int:
+    offset = get_current_offset(profile_path)
+    sens = try_input(int, prompt="\nEnter your new desired sensitivity (1-255): ")
     with open(profile_path, "rb") as f:
         profile = bytearray(f.read()[20:])
     profile[offset] = sens
@@ -45,3 +53,8 @@ def rewrite_sens(profile_path: str):
     profile[0:0] = bytearray(hash.digest())
     with open(profile_path, "wb") as f:
         f.write(profile)
+
+    print(
+        "\nDone! Restart the game, check the mouse settings, and enjoy your newly configured sensitivity."
+    )
+    return sens
