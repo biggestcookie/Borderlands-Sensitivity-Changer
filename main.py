@@ -1,7 +1,5 @@
-import json
 import os
 import shutil
-from typing import Any
 
 from offset import rewrite_sens, get_current_sens, get_current_offset
 from profiles import get_profile_path
@@ -9,19 +7,6 @@ from util import try_input
 from textwrap import dedent
 
 GAMES = ["Borderlands The Pre-Sequel", "Borderlands 2"]
-GAME_CHOICE = None
-PROFILE_PATH = None
-OFFSET = None
-CURRENT_SENS = None
-
-
-def load_config() -> Any:
-    config_path = f"{os.path.dirname(os.path.realpath(__file__))}\\config.json"
-    try:
-        with open(config_path) as config:
-            return json.load(config)
-    except Exception:
-        return
 
 
 def input_to_game_choice(input: str) -> str:
