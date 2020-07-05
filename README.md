@@ -37,7 +37,11 @@ If your current sensitivity doesn't look right, try recalculating!
 2 - Recalculate current sensitivity
 Enter - Quit application
 
-Type # and press enter:
+Type # and press enter: 1
+
+Enter your new desired sensitivity (1-255): 2
+
+Done! Restart the game, check the mouse settings, and enjoy your newly configured sensitivity.
 ```
 
 ## Development
