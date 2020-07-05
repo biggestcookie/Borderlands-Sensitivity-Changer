@@ -20,10 +20,17 @@ Which game are you changing sensitivity for?
 Type # and press enter: 1
 
 Found latest profile.bin at D:\Paul\Documents\My Games\Borderlands 2\WillowGame\SaveData\76561198045674442\profile.bin
-
 Backing up profile.bin to profile.bin.bak
 
-Current mouse sensitivity: 3
+Please open your game, set your mouse sensitivity to 50, and exit to main menu.
+Press enter once you are done.
+
+Now set your mouse sensitivity to 75, and exit to main menu again.
+Press enter once you are done.
+
+Calculated successfully!
+
+Current mouse sensitivity: 75
 If your current sensitivity doesn't look right, try recalculating!
 
 1 - Set mouse sensitivity
