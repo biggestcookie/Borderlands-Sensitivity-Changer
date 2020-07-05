@@ -1,5 +1,7 @@
 # Borderlands Sensitivity Changer
 
+### [Download it here!](https://github.com/biggestcookie/borderlands-sensitivity-changer/releases/latest)
+
 Borderlands 2 and Borderlands: The Pre-Sequel allow you to change mouse sensitivity only in increments of 10. Unfortunately you cannot fine-tune this value yourself or set this value below 10, which [can be frustrating when a sensitivity of 10 is still too high](https://www.google.com/search?q=borderlands+2+sensitivity+too+high). This program helps you easily change this value yourself by walking you through a simple automated process, where it calculates the hex offset of your mouse sensitivity in your save file and edits it for you.
 
 ## Usage
