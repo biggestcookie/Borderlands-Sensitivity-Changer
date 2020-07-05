@@ -14,22 +14,23 @@ Currently there is only Windows support.
 
 ```
 Which game are you changing sensitivity for?
-1 - BORDERLANDS_PRESEQUEL
-2 - BORDERLANDS_2
-Type # and press enter: 2
+1 - Borderlands 2
+2 - Borderlands The Pre-Sequel
+
+Type # and press enter: 1
+
+Found latest profile.bin at D:\Paul\Documents\My Games\Borderlands 2\WillowGame\SaveData\76561198045674442\profile.bin
 
 Backing up profile.bin to profile.bin.bak
 
-Please open your game, set your mouse sensitivity to 95, and exit to main menu.
-Press enter once you are done.
+Current mouse sensitivity: 3
+If your current sensitivity doesn't look right, try recalculating!
 
-Now set your mouse sensitivity to 60, and exit to main menu again.
-Press enter once you are done.
+1 - Set mouse sensitivity
+2 - Recalculate current sensitivity
+Enter - Quit application
 
-Enter your new desired sensitivity (1-255): 3
-
-Done! Restart the game, check the mouse settings, and enjoy your newly configured sensitivity.
-If this did not work for you, rename profile.bin.bak to profile.bin (replacing the current one), found at D:\Users\Paul\Documents\My Games\Borderlands 2\WillowGame\SaveData\76561198045674442
+Type # and press enter:
 ```
 
 ## Development
