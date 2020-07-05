@@ -46,6 +46,10 @@ Enter your new desired sensitivity (1-255): 2
 Done! Restart the game, check the mouse settings, and enjoy your newly configured sensitivity.
 ```
 
+### Alternatives
+
+The 'Uncapped Pause Menu Settings' mod for [Borderlands 2](https://www.nexusmods.com/borderlands2/mods/157) and [The Pre-Sequel](https://www.nexusmods.com/borderlandspresequel/mods/14) allow you to fine-tune your sensitivity, as well as many other settings while in-game, although they require a hex-edit and some prior setup before use.
+
 ## Development
 
 ### Requirements
