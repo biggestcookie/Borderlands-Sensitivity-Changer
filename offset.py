@@ -1,16 +1,18 @@
 import hashlib
 import random
 
+from config import CONFIG
 from util import try_input
 
 
-def get_current_offset(profile_path: str) -> int:
+def calculate_offset(profile_path: str) -> int:
     while True:
-        sens_1 = random.randrange(5, 100, 5)
+        complete_prompt = "Press enter once you are done. "
+        sens_1 = random.randrange(10, 100, 5)
         print(
-            f"Please open your game, set your mouse sensitivity to {sens_1}, and exit to main menu."
+            f"\nPlease open your game, set your mouse sensitivity to {sens_1}, and exit to main menu."
         )
-        input("Press enter once you are done.")
+        input(complete_prompt)
 
         with open(profile_path, "rb") as f:
             profile_1 = bytearray(f.read()[20:])
@@ -18,32 +20,32 @@ def get_current_offset(profile_path: str) -> int:
 
         sens_2 = sens_1
         while sens_2 == sens_1:
-            sens_2 = random.randrange(5, 100, 5)
+            sens_2 = random.randrange(10, 100, 5)
 
         print(
             f"\nNow set your mouse sensitivity to {sens_2}, and exit to main menu again."
         )
-        input("Press enter once you are done.")
+        input(complete_prompt)
 
         with open(profile_path, "rb") as f:
             profile_2 = bytearray(f.read()[20:])
             indexes_2 = [i for i, val in enumerate(profile_2) if val == sens_2]
         intersection = set(indexes_1).intersection(indexes_2)
         if len(intersection) == 1:
-            return intersection.pop()
+            offset = intersection.pop()
+            CONFIG.set_data("offset", offset)
+            print("\nCalculated successfully!")
+            return offset
         print("\nUnable to calculate offset! Restarting.")
 
 
-def get_current_sens(profile_path: str, offset=None) -> int:
-    if not offset:
-        offset = get_current_offset(profile_path)
+def get_current_sens(profile_path: str, offset: int) -> int:
     with open(profile_path, "rb") as f:
         profile = bytearray(f.read()[20:])
         return profile[offset]
 
 
-def rewrite_sens(profile_path: str, offset=None) -> int:
-    offset = get_current_offset(profile_path)
+def rewrite_sens(profile_path: str, offset) -> int:
     sens = try_input(int, prompt="\nEnter your new desired sensitivity (1-255): ")
     with open(profile_path, "rb") as f:
         profile = bytearray(f.read()[20:])
@@ -53,7 +55,6 @@ def rewrite_sens(profile_path: str, offset=None) -> int:
     profile[0:0] = bytearray(hash.digest())
     with open(profile_path, "wb") as f:
         f.write(profile)
-
     print(
         "\nDone! Restart the game, check the mouse settings, and enjoy your newly configured sensitivity."
     )

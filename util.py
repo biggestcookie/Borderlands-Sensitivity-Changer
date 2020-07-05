@@ -5,7 +5,7 @@ def try_input(
     func: Callable,
     text: List[str] = None,
     prompt: str = "",
-    error: str = "Not a valid choice",
+    error: str = "Not a valid choice.",
 ) -> Any:
     if text:
         print(*text, sep="\n", end="\n" * 2)
@@ -13,4 +13,4 @@ def try_input(
         try:
             return func(input(prompt))
         except Exception:
-            print(error)
+            print(error, end="\n" * 2)
