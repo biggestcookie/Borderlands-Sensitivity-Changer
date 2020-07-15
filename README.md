@@ -6,7 +6,7 @@ Borderlands 2 and Borderlands: The Pre-Sequel have a minimum sensitivity value o
 
 ### How does it work?
 
-Your mouse sensitivity, among other user settings, are stored somewhere in a file called `profile.bin`. This setting is stored in a location that seems to vary from user to user. During the calculation, the tool asks you to set your mouse sensitivity to different values, calculates the hex offset of each of these values, and attempts to find where these offsets overlap. This offset is saved and used when you want to set your own custom mouse sensitivity, which can be any number between 1 - 255.
+Your mouse sensitivity, among other user settings, are stored somewhere in a file called `profile.bin`. This setting's location in `profile.bin` seems to vary from user to user, which is why it's not easy to simply ask the user to set the value themselves at a given offset. During the calculation, the tool asks you to set your mouse sensitivity to different values, calculates the hex offset of each of these values, and attempts to find where these offsets overlap. This offset is saved and used when you want to set your own custom mouse sensitivity, which can be any number between 1 - 255.
 
 ## Usage
 
