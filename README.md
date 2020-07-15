@@ -4,6 +4,10 @@
 
 Borderlands 2 and Borderlands: The Pre-Sequel have a minimum sensitivity value of 10, which [can be frustrating when the minimum sensitivity is still too high](https://www.google.com/search?q=borderlands+2+sensitivity+too+high). This program helps you easily change this value yourself lower than the minimum, or any value of your choosing.
 
+### How does it work?
+
+Your mouse sensitivity, among other user settings, are stored somewhere in a file called `profile.bin`. This setting is stored in a location that seems to vary from user to user. During the calculation, the tool asks you to set your mouse sensitivity to different values, calculates the hex offset of each of these values, and attempts to find where these offsets overlap. This offset is saved and used when you want to set your own custom mouse sensitivity, which can be any number between 1 - 255.
+
 ## Usage
 
 ### Releases
