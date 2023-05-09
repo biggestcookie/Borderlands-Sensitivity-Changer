@@ -1,11 +1,12 @@
 import hashlib
+from pathlib import Path
 import random
 
 from config import CONFIG
 from util import try_input
 
 
-def calculate_offset(profile_path: str) -> int:
+def calculate_offset(profile_path: str | Path) -> int:
     while True:
         complete_prompt = "Press enter once you are done. "
         sens_1 = random.randrange(10, 100, 5)
@@ -39,13 +40,13 @@ def calculate_offset(profile_path: str) -> int:
         print("\nUnable to calculate offset! Restarting.")
 
 
-def get_current_sens(profile_path: str, offset: int) -> int:
+def get_current_sens(profile_path: str | Path, offset: int) -> int:
     with open(profile_path, "rb") as f:
         profile = bytearray(f.read()[20:])
         return profile[offset]
 
 
-def rewrite_sens(profile_path: str, offset) -> int:
+def rewrite_sens(profile_path: str | Path, offset) -> int:
     sens = try_input(int, prompt="\nEnter your new desired sensitivity (1-255): ")
     with open(profile_path, "rb") as f:
         profile = bytearray(f.read()[20:])
