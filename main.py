@@ -7,7 +7,7 @@ from profiles import get_profile_path
 
 
 def main():
-    profile_path = get_profile_path()
+    profile_path = get_profile_path(CONFIG.user_os)
     print("\nBacking up profile.bin to profile.bin.bak")
     shutil.copyfile(profile_path, f"{profile_path}.bak")
 
