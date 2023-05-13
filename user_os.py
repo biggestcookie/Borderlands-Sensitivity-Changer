@@ -4,6 +4,7 @@ from abc import ABC, abstractmethod
 import os
 from pathlib import Path
 
+from exceptions import SaveDataNotFound
 from game_choice import Game_Choice
 
 
@@ -20,9 +21,12 @@ class UserOS(ABC):
         pass
 
     @abstractmethod
-    def find_savedata(self) -> str | None:
-        """Return an absolute path to the chosen game's default save location
-        (where profile.bin is), or None if it wasn't found.
+    def find_savedata(self) -> Path:
+        """Return an absolute path to the chosen game's default SaveData folder
+        (where profile.bin is), or raise an exception if it wasn't found.
+
+        Exceptions:
+        * SaveDataNotFound - The SaveData folder doesn't exist at its default location.
         """
         pass
 
@@ -38,18 +42,23 @@ class Linux(UserOS):
         self._errmsg = [
             f"\nCould not find '{self.game}/WillowGame/SaveData' for the Proton version of {self.game}.",
             f"Please enter the full path to WillowGame, this can usually be found in",
-            f"'steamapps/compatdata/{id}/pfx/drive_c/users/steamuser/Documents/My Games/{self.game}'.",
+            f"'steamapps/compatdata/{self._steamid}/pfx/drive_c/users/steamuser/Documents/My Games/{self.game}'.",
             f"                     ({'^' * len(self._steamid)} the Steam ID of {self.game})",
-            f"Ex. /home/CL4P-TP/.steam/steam/steamapps/ <...> /{self.game}/WillowGame",
+            f"Ex. /home/CL4P-TP/.steam/steam/steamapps/...<ETC>.../{self.game}/WillowGame",
         ]
 
     @property
     def savedata_not_found(self) -> list[str]:
         return self._errmsg
 
-    def find_savedata(self) -> str | None:
-        save_path = f"{Path.home()}/.steam/steam/steamapps/compatdata/{self._steamid}/pfx/drive_c/users/steamuser/Documents/My Games/{self.game}/WillowGame/SaveData/"
-        return save_path if Path(save_path).exists() else None
+    def find_savedata(self) -> Path:
+        save_path = (
+            Path.home()
+            / f".steam/steam/steamapps/compatdata/{self._steamid}/pfx/drive_c/users/steamuser/Documents/My Games/{self.game}/WillowGame/SaveData/"
+        )
+        if not save_path.exists():
+            raise SaveDataNotFound(str(save_path))
+        return save_path
 
 
 class Windows(UserOS):
@@ -78,12 +87,14 @@ class Windows(UserOS):
     def savedata_not_found(self) -> list[str]:
         return self._errmsg
 
-    def find_savedata(self) -> str | None:
-        path = "{0}:\\Users\\{1}\\Documents\\My Games\\{2}\\WillowGame\\SaveData\\"
+    def find_savedata(self) -> Path:
         user = os.environ["USERNAME"]
         for drive in self.get_drives():
-            save_path = path.format(drive, user, self.game)
+            save_path = (
+                Path(f"{drive}:/Users")
+                / f"{user}/Documents/My Games/{self.game}/WillowGame/SaveData"
+            )
             if os.path.exists(save_path):
                 return save_path
 
-        return None
+        raise SaveDataNotFound

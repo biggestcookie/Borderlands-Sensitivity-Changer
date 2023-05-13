@@ -1,5 +1,5 @@
 import json
-import os
+from pathlib import Path
 import platform
 from typing import Any
 
@@ -12,7 +12,7 @@ from util import try_input
 class Config:
     game_choice: Game_Choice
     config_data: Any
-    config_path = f"{os.path.dirname(os.path.abspath(__main__.__file__))}\\config.json"
+    config_path = Path(__main__.__file__).resolve().parent / "config.json"
     _user_os: user_os.UserOS
 
     def __init__(self):
