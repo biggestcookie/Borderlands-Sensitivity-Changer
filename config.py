@@ -1,6 +1,7 @@
 import json
 from pathlib import Path
 import platform
+import sys
 from typing import Any
 
 import __main__
@@ -12,8 +13,13 @@ from util import try_input
 class Config:
     game_choice: Game_Choice
     config_data: Any
-    config_path = Path(__main__.__file__).resolve().parent / "config.json"
     _user_os: user_os.UserOS
+
+    if getattr(sys, 'frozen', False):  # if running as PyInstaller onefile
+        _app_dir = Path(sys.executable).resolve().parent
+    else:
+        _app_dir = Path(__main__.__file__).resolve().parent
+    config_path = _app_dir / "config.json"
 
     def __init__(self):
         text = [
