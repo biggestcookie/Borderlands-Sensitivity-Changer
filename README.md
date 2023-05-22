@@ -1,6 +1,6 @@
 # Borderlands Sensitivity Changer
 
-### [Download it here! (for Windows and Linux+Proton)](https://github.com/biggestcookie/borderlands-sensitivity-changer/releases/latest)
+### [Download for Windows and Linux+Proton here!](https://github.com/biggestcookie/borderlands-sensitivity-changer/releases/latest)
 
 Borderlands 2 and Borderlands: The Pre-Sequel have a minimum sensitivity value of 10, which [can be frustrating when the minimum sensitivity is still too high](https://www.google.com/search?q=borderlands+2+sensitivity+too+high). This program helps you easily change this value yourself lower than the minimum, or any value of your choosing.
 
