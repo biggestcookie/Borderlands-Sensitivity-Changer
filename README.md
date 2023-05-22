@@ -58,7 +58,7 @@ The 'Uncapped Pause Menu Settings' mod for [Borderlands 2](https://www.nexusmods
 
 ### Requirements
 
-[Python 3.8+](https://www.python.org/downloads/)
+[Python 3.10+](https://www.python.org/downloads/)
 
 Install required packages using `pip install -r requirements.txt`
 
