@@ -1,4 +1,4 @@
-# Borderlands Sensitivity Changer 1.2
+# Borderlands Sensitivity Changer
 
 ### [Download it here! (for Windows and Linux+Proton)](https://github.com/biggestcookie/borderlands-sensitivity-changer/releases/latest)
 
