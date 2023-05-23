@@ -10,11 +10,20 @@ Your mouse sensitivity, among other user settings, are stored somewhere in a fil
 
 ## Usage
 
-### Releases
+### Installation
 
-The built application can be found in the [releases](https://github.com/biggestcookie/borderlands-sensitivity-changer/releases) of this repository. Simply download the application to any location and run it. Make sure you have run the game and have changed some settings at least once before launching.
+The Windows and Linux applications can be found in the [releases](https://github.com/biggestcookie/borderlands-sensitivity-changer/releases) of this repository. 
 
-This app runs on Windows and Linux. On Linux, it will only work on the Windows version of the game running through Proton, and not the Linux-native port.
+#### Windows: 
+Simply download the Windows application (named `BLSensChanger-Windows-1-2-0.exe` to any location and run it. Make sure you have run the game and have changed some settings at least once before launching.
+
+#### Linux:
+Note that on Linux, this app will only work on the Windows version of the game running through Proton, and not the Linux-native port.
+
+1. Download the Linux application (named `BLSensChanger-Linux-1-2-0`).
+2. Using your terminal, `cd` into the folder your browser downloaded the file to (often `cd ~/Downloads` but this may vary).
+3. Run `chmod +x ./BLSensChanger-Linux-1-2-0` to allow the file to become executable.
+4. Run `./BLSensChanger-Linux-1-2-0` to start the program. Make sure you have run the game and have changed some settings at least once before launching.
 
 ### Demonstration
 
