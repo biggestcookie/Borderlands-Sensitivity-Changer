@@ -1,30 +1,40 @@
-from enum import Enum
 import json
-import os
+from pathlib import Path
+import platform
+import sys
 from typing import Any
 
 import __main__
+from game_choice import Game_Choice
+import user_os
 from util import try_input
-
-
-class Game_Choice(Enum):
-    BL2 = "Borderlands 2"
-    TPS = "Borderlands The Pre-Sequel"
 
 
 class Config:
     game_choice: Game_Choice
     config_data: Any
-    config_path = f"{os.path.dirname(os.path.abspath(__main__.__file__))}\\config.json"
+    _user_os: user_os.UserOS
+
+    if getattr(sys, 'frozen', False):  # if running as PyInstaller onefile
+        _app_dir = Path(sys.executable).resolve().parent
+    else:
+        _app_dir = Path(__main__.__file__).resolve().parent
+    config_path = _app_dir / "config.json"
 
     def __init__(self):
         text = [
             "Which game are you changing sensitivity for?",
             *[f"{i + 1} - {choice.value}" for i, choice in enumerate(Game_Choice)],
         ]
-        self.game_choice = try_input(
+        self.game_choice: Game_Choice = try_input(
             self.__input_to_game_choice, text=text, prompt="Type # and press enter: "
         )
+
+        CurrentUserOS = (
+            user_os.Windows if platform.system() == "Windows" else user_os.Linux
+        )
+        self._user_os = CurrentUserOS(self.game_choice)
+
         self.config_data = self.load_config()
         self.save_config()
 
@@ -51,6 +61,10 @@ class Config:
     def set_data(self, key: str, value: Any):
         self.config_data[self.game_choice.value][key] = value
         self.save_config()
+
+    @property
+    def user_os(self) -> user_os.UserOS:
+        return self._user_os
 
     @staticmethod
     def __input_to_game_choice(input: str) -> Game_Choice:

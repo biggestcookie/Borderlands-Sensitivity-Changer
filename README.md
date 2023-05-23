@@ -1,6 +1,6 @@
 # Borderlands Sensitivity Changer
 
-### [Download it here!](https://github.com/biggestcookie/borderlands-sensitivity-changer/releases/latest)
+### [Download for Windows and Linux+Proton here!](https://github.com/biggestcookie/borderlands-sensitivity-changer/releases/latest)
 
 Borderlands 2 and Borderlands: The Pre-Sequel have a minimum sensitivity value of 10, which [can be frustrating when the minimum sensitivity is still too high](https://www.google.com/search?q=borderlands+2+sensitivity+too+high). This program helps you easily change this value yourself lower than the minimum, or any value of your choosing.
 
@@ -14,7 +14,7 @@ Your mouse sensitivity, among other user settings, are stored somewhere in a fil
 
 The built application can be found in the [releases](https://github.com/biggestcookie/borderlands-sensitivity-changer/releases) of this repository. Simply download the application to any location and run it. Make sure you have run the game and have changed some settings at least once before launching.
 
-Currently there is only Windows support.
+This app runs on Windows and Linux. On Linux, it will only work on the Windows version of the game running through Proton, and not the Linux-native port.
 
 ### Demonstration
 
@@ -58,7 +58,7 @@ The 'Uncapped Pause Menu Settings' mod for [Borderlands 2](https://www.nexusmods
 
 ### Requirements
 
-[Python 3.5+](https://www.python.org/downloads/)
+[Python 3.10+](https://www.python.org/downloads/)
 
 Install required packages using `pip install -r requirements.txt`
 
