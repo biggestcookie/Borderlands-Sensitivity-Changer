@@ -77,8 +77,5 @@ You can build the program into an executable with the command `pyinstaller main.
 
 ## Credits
 
-This program is an improvement of a solution found on the [Borderlands 2 Steam Community](https://steamcommunity.com/app/49520/discussions/0/882960797527726404/#c616188473194554202) by user Kaathan.
-
----
-
-[![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/W7W71USFG)
+This program is an improvement of a solution found on the [Borderlands 2 Steam Community](https://steamcommunity.com/app/49520/discussions/0/882960797527726404/#c616188473194554202) by Steam user Kaathan.
+Linux+Proton support by @JonLiuFYI.
