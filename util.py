@@ -1,9 +1,9 @@
-from typing import Any, Callable, List
+from typing import Any, Callable, List, Optional
 
 
 def try_input(
     func: Callable,
-    text: List[str] = None,
+    text: Optional[List[str]] = None,
     prompt: str = "",
     error: str = "Not a valid choice.",
 ) -> Any:
