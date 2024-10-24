@@ -2,7 +2,18 @@
 
 ### [Download for Windows and Linux+Proton here!](https://github.com/biggestcookie/borderlands-sensitivity-changer/releases/latest)
 
-Borderlands 2 and Borderlands: The Pre-Sequel have a minimum sensitivity value of 10, which [can be frustrating when the minimum sensitivity is still too high](https://www.google.com/search?q=borderlands+2+sensitivity+too+high). This program helps you easily change this value yourself lower than the minimum, or any value of your choosing.
+The Borderlands games have a minimum sensitivity value of 10, which [can be frustrating when the minimum sensitivity is still too high](https://www.google.com/search?q=borderlands+2+sensitivity+too+high). This program helps you easily change this value yourself lower than the minimum, or any value of your choosing.
+
+Supports the following games:
+
+- Borderlands 2
+- Borderlands: The Pre-Sequel
+- Tiny Tina's Assault On Dragon Keep
+
+on the following platforms:
+
+- Windows
+- Linux (running the Windows version via Proton)
 
 ### How does it work?
 
@@ -12,12 +23,14 @@ Your mouse sensitivity, among other user settings, are stored somewhere in a fil
 
 ### Installation
 
-The Windows and Linux applications can be found in the [releases](https://github.com/biggestcookie/borderlands-sensitivity-changer/releases) of this repository. 
+The Windows and Linux applications can be found in the [releases](https://github.com/biggestcookie/borderlands-sensitivity-changer/releases) of this repository.
 
-#### Windows: 
+#### Windows:
+
 Simply download the Windows application (named `BLSensChanger-Windows-1-2-0.exe` to any location and run it. Make sure you have run the game and have changed some settings at least once before launching.
 
 #### Linux:
+
 Note that on Linux, this app will only work on the Windows version of the game running through Proton, and not the Linux-native port.
 
 1. Download the Linux application (named `BLSensChanger-Linux-1-2-0`).
@@ -31,6 +44,7 @@ Note that on Linux, this app will only work on the Windows version of the game r
 Which game are you changing sensitivity for?
 1 - Borderlands 2
 2 - Borderlands The Pre-Sequel
+3 - Tiny Tina's Assault On Dragon Keep
 
 Type # and press enter: 1
 
