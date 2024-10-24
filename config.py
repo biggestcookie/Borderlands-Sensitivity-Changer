@@ -72,6 +72,8 @@ class Config:
             return Game_Choice.BL2
         elif input == "2":
             return Game_Choice.TPS
+        elif input == "3":
+            return Game_Choice.TTA
         else:
             raise IndexError
 

@@ -40,7 +40,7 @@ def get_profile_path(user_os: UserOS) -> str | Path:
         except SaveDataNotFound as errpath:
             save_path = None
             print(
-                "It seems like your SaveData folder isn't in the usual location,",
+                "It seems like your SaveData folder isn't in the usual location. ",
                 errpath,
             )
         else:
