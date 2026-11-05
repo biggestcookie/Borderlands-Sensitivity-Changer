@@ -6,24 +6,28 @@ Borderlands 2 and Borderlands: The Pre-Sequel have a minimum sensitivity value o
 
 ### How does it work?
 
-Your mouse sensitivity, among other user settings, are stored somewhere in a file called `profile.bin`. This setting's location in `profile.bin` seems to vary from user to user, which is why it's not easy to simply ask the user to set the value themselves at a given offset. During the calculation, the tool asks you to set your mouse sensitivity to different values, calculates the hex offset of each of these values, and attempts to find where these offsets overlap. This offset is saved and used when you want to set your own custom mouse sensitivity, which can be any number between 1 - 255.
+Your mouse sensitivity is stored in a game settings file called `profile.bin`. The tool finds the exact mouse-sensitivity setting inside that file, changes it to any value you want (1-255, including below the in-game minimum of 10), and writes the file back safely so the game accepts it. Because it edits the setting itself rather than guessing at a position in the file, it works reliably across different accounts and setups.
 
 ## Usage
 
 ### Installation
 
-The Windows and Linux applications can be found in the [releases](https://github.com/biggestcookie/borderlands-sensitivity-changer/releases) of this repository. 
+The Windows and Linux applications can be found in the [releases](https://github.com/biggestcookie/borderlands-sensitivity-changer/releases) of this repository.
 
-#### Windows: 
-Simply download the Windows application (named `BLSensChanger-Windows-1-2-0.exe` to any location and run it. Make sure you have run the game and have changed some settings at least once before launching.
+> Before running the tool, launch the game once and change at least one setting so that your `profile.bin` file is created.
 
-#### Linux:
-Note that on Linux, this app will only work on the Windows version of the game running through Proton, and not the Linux-native port.
+#### Windows
 
-1. Download the Linux application (named `BLSensChanger-Linux-1-2-0`).
-2. Using your terminal, `cd` into the folder your browser downloaded the file to (often `cd ~/Downloads` but this may vary).
-3. Run `chmod +x ./BLSensChanger-Linux-1-2-0` to allow the file to become executable.
-4. Run `./BLSensChanger-Linux-1-2-0` to start the program. Make sure you have run the game and have changed some settings at least once before launching.
+Download the Windows application (e.g. `BLSensChanger-Windows.exe`) to any location and run it.
+
+#### Linux
+
+> **Note:** On Linux this tool works only with the Windows version of the game running through Proton, not the Linux-native port.
+
+1. Download the Linux application (e.g. `BLSensChanger-Linux`).
+2. Open a terminal and `cd` into the folder your browser saved it to (usually `~/Downloads`).
+3. Run `chmod +x ./BLSensChanger-Linux` to make the file executable.
+4. Run `./BLSensChanger-Linux` to start the tool.
 
 ### Demonstration
 
@@ -34,29 +38,26 @@ Which game are you changing sensitivity for?
 
 Type # and press enter: 1
 
-Found latest profile.bin at D:\Paul\Documents\My Games\Borderlands 2\WillowGame\SaveData\76561198045674442\profile.bin
-Backing up profile.bin to profile.bin.bak
-
-Please open your game, set your mouse sensitivity to 50, and exit to main menu.
+To find your active profile: in your game, change mouse sensitivity to a new value and exit to the main menu.
 Press enter once you are done.
 
-Now set your mouse sensitivity to 75, and exit to main menu again.
-Press enter once you are done.
+Active profile: D:\Paul\Documents\My Games\Borderlands 2\WillowGame\SaveData\76561198045674442\profile.bin
 
-Calculated successfully!
+Backing up profile.bin to D:\Paul\Documents\My Games\Borderlands 2\WillowGame\SaveData\76561198045674442\profile.bin.bak
 
-Current mouse sensitivity: 75
-If your current sensitivity doesn't look right, try recalculating!
+Current mouse sensitivity: 35
 
 1 - Set mouse sensitivity
-2 - Recalculate current sensitivity
+2 - Re-detect active profile
 Enter - Quit application
 
 Type # and press enter: 1
 
-Enter your new desired sensitivity (1-255): 2
+Enter your new desired sensitivity (1-255): 5
 
 Done! Restart the game, check the mouse settings, and enjoy your newly configured sensitivity.
+
+WARNING: Next time you launch the game, select your LOCAL save, not the cloud save. If prompted, overwrite the cloud save with your local save.
 ```
 
 ### Alternatives
@@ -77,5 +78,14 @@ You can build the program into an executable with the command `pyinstaller main.
 
 ## Credits
 
-This program is an improvement of a solution found on the [Borderlands 2 Steam Community](https://steamcommunity.com/app/49520/discussions/0/882960797527726404/#c616188473194554202) by Steam user Kaathan.
-Linux+Proton support by @JonLiuFYI.
+Linux+Proton support by [@JonLiuFYI](https://github.com/JonLiuFYI).
+
+### References
+
+- [Kaathan's Python script from the Steam BL2 Community](https://steamcommunity.com/app/49520/discussions/0/882960797527726404/#c616188473194554202) - used originally as a reference for this program
+- [`swimmesberger/bo2-profile-editor`](https://github.com/swimmesberger/bo2-profile-editor) - documents the `profile.bin` structure and provided reference data used to validate the decoder.
+- [`lzokay`](https://pypi.org/project/lzokay/) - the LZO compression library used to read and write `profile.bin`.
+
+## Disclaimer
+
+This tool and the reverse-engineered `profile.bin` solution were created with AI assistance. The original solution was written manually, and the current solution was tested manually.
