@@ -37,6 +37,7 @@ class Linux(UserOS):
         steam_ids = {
             "Borderlands 2": "49520",
             "Borderlands The Pre-Sequel": "261640",
+            "Tiny Tina's Assault On Dragon Keep": "1712840",
         }
         self._steamid = steam_ids[self.game]
         self._errmsg = [

@@ -7,3 +7,4 @@ class Game_Choice(Enum):
 
     BL2 = "Borderlands 2"
     TPS = "Borderlands The Pre-Sequel"
+    TTA = "Tiny Tina's Assault On Dragon Keep"

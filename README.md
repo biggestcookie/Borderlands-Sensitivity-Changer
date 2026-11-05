@@ -2,7 +2,7 @@
 
 ### [Download for Windows and Linux+Proton here!](https://github.com/biggestcookie/borderlands-sensitivity-changer/releases/latest)
 
-Borderlands 2 and Borderlands: The Pre-Sequel have a minimum sensitivity value of 10, which [can be frustrating when the minimum sensitivity is still too high](https://www.google.com/search?q=borderlands+2+sensitivity+too+high). This program helps you easily change this value yourself lower than the minimum, or any value of your choosing.
+Borderlands 2, Borderlands: The Pre-Sequel, and Tiny Tina's Assault on Dragon Keep have a minimum sensitivity value of 10, which [can be frustrating when the minimum sensitivity is still too high](https://www.google.com/search?q=borderlands+2+sensitivity+too+high). This program helps you easily change this value yourself lower than the minimum, or any value of your choosing.
 
 ### How does it work?
 
@@ -35,6 +35,7 @@ Download the Windows application (e.g. `BLSensChanger-Windows.exe`) to any locat
 Which game are you changing sensitivity for?
 1 - Borderlands 2
 2 - Borderlands The Pre-Sequel
+3 - Tiny Tina's Assault On Dragon Keep
 
 Type # and press enter: 1
 
