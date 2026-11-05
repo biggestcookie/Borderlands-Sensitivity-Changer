@@ -1,0 +1,79 @@
+name: Build and Release
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build-for-desktop:
+    name: Build desktop binary (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: windows-latest
+            artifact_name: BLSensChanger-Windows.exe
+          - os: ubuntu-latest
+            artifact_name: BLSensChanger-Linux
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Build with PyInstaller
+        run: pyinstaller main.py --onefile
+
+      - name: Name binary for release
+        shell: bash
+        run: |
+          if [ "${{ runner.os }}" = "Windows" ]; then
+            mv dist/main.exe "${{ matrix.artifact_name }}"
+          else
+            mv dist/main "${{ matrix.artifact_name }}"
+            chmod +x "${{ matrix.artifact_name }}"
+          fi
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v7
+        with:
+          name: ${{ matrix.artifact_name }}
+          path: ${{ matrix.artifact_name }}
+          if-no-files-found: error
+          retention-days: 5
+
+  create-release:
+    name: Upload and create new release
+    needs: build-for-desktop
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Create environment variables
+        run: |
+          echo "date=$(date +%Y-%m-%d)" >> "$GITHUB_ENV"
+          echo "tag=Release_${{ github.run_number }}_$(date +%Y-%m-%d)" >> "$GITHUB_ENV"
+
+      - name: Download build artifacts
+        uses: actions/download-artifact@v8
+        with:
+          path: artifacts
+          merge-multiple: true
+
+      - name: Create release
+        uses: softprops/action-gh-release@v3
+        with:
+          name: "Release #${{ github.run_number }} ${{ env.date }}"
+          tag_name: ${{ env.tag }}
+          files: artifacts/*
+          generate_release_notes: true
